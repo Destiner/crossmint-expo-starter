@@ -8,6 +8,9 @@ importers:
 
   .:
     dependencies:
+      '@crossmint/client-sdk-react-native-ui':
+        specifier: ^0.1.1
+        version: 0.1.1(bufferutil@4.0.9)(react-native@0.74.5(@babel/core@7.26.10)(@babel/preset-env@7.26.9(@babel/core@7.26.10))(@types/react@18.2.79)(bufferutil@4.0.9)(react@18.2.0)(utf-8-validate@5.0.10))(react@18.2.0)(typescript@5.8.2)(utf-8-validate@5.0.10)(zod@3.24.2)
       '@dynamic-labs/client':
         specifier: ^4.0.0-alpha.52
         version: 4.10.1
@@ -993,6 +996,43 @@ packages:
   '@craftzdog/react-native-buffer@6.0.5':
     resolution: {integrity: sha512-Av+YqfwA9e7jhgI9GFE/gTpwl/H+dRRLmZyJPOpKTy107j9Oj7oXlm3/YiMNz+C/CEGqcKAOqnXDLs4OL6AAFw==}
 
+  '@crossmint/client-sdk-base@1.4.16':
+    resolution: {integrity: sha512-MxSzCyySmGiQyl493iojPEmKACDCez0SBmbbJcPdp3bdpdeBHuaoSOLC0sDGzf72t1iXd5Pf7tVogzgEN1SNoQ==}
+
+  '@crossmint/client-sdk-react-base@0.1.1':
+    resolution: {integrity: sha512-ne1wqn9LqPmGchGHNEHd0d9iY8d+YzC6vZ0iRtHeYn3ZaBxQyRi34Mz0WIHIfjAy4XLgnmg3KMzgdK30qHoSeg==}
+    peerDependencies:
+      react: '>=17.0.2'
+
+  '@crossmint/client-sdk-react-native-ui@0.1.1':
+    resolution: {integrity: sha512-odew5VDU323kBScoxLZIBR1cCkATKlf9oYI42fhIbHdTeiQgR3CBWPWxLo35Z3lbSq3IcxJjRfVVYnjB73XKgA==}
+    peerDependencies:
+      react: '>=17.0.2'
+      react-native: '>=0.74.3'
+
+  '@crossmint/client-sdk-window@0.2.3':
+    resolution: {integrity: sha512-Xh2F7z8ddKCEZPuuRxjHwGSy1x3JpGn3LX7PKX764UuknbDSqruiSJhONY6dY6eelfyY/glyFEnAkCXi3SVnxw==}
+
+  '@crossmint/common-sdk-auth@1.0.23':
+    resolution: {integrity: sha512-z9MRQgdJbefM2CvUFxIUw6IUjMqj0f2n178ywuPGjiySjOduzE2vKoHZHfcXy7BUtyI9n9bUrr9EMhnPRMGpkw==}
+
+  '@crossmint/common-sdk-base@0.3.4':
+    resolution: {integrity: sha512-5mD2LgVqRqcIiMI/8G6PuJCbQjGGhw/FxLM/lW/UZizQ/Y2OEv1cnLEvL1ZuBAjC03RR/S4lxZEcqQ7vV2A4Nw==}
+
+  '@crossmint/wallets-sdk@0.4.4':
+    resolution: {integrity: sha512-EIjOMMCpg58+9ueQFkOr6M36SQZr0+c31H7xAeJ33/T35a0a9RE9CfMzBhn6PbnuoUee781rMmwvc57u+DRpKw==}
+
+  '@datadog/browser-core@4.42.2':
+    resolution: {integrity: sha512-LnkcdFyNRpMEuvV1ePfKdgRvYh+VqqAiVRoAmgObcuzdYdIwQSfcJp4GFbBgr5v7uF2uhAp/b96MIyKlqi0Ixg==}
+
+  '@datadog/browser-logs@4.42.2':
+    resolution: {integrity: sha512-idl9DilUGmWbmYb1D6VPmkpnhqaIdsQ08qjOw1c0QbtGUAFlFYyFCrugf2qwMt8QbJ8DqvEiwULTVAZOV9O4kA==}
+    peerDependencies:
+      '@datadog/browser-rum': 4.42.2
+    peerDependenciesMeta:
+      '@datadog/browser-rum':
+        optional: true
+
   '@dynamic-labs/assert-package-version@4.10.1':
     resolution: {integrity: sha512-Qo+VchtjspMQ+5t7JhcaQshGB6YN/jStnHOtpeQsN1oO/HsaxCTgdQXEus6tsFUddRtpRlRkG7Y2DjfzixUZEw==}
 
@@ -1237,6 +1277,9 @@ packages:
 
   '@hapi/topo@5.1.0':
     resolution: {integrity: sha512-foQZKJig7Ob0BMAYBfcJk8d77QtOe7Wo4ox7ff1lQYoNNAb6jwcY1ncdoy2e9wQZzvNy7ODZCYJkK8kzmcAnAg==}
+
+  '@hey-api/client-fetch@0.8.1':
+    resolution: {integrity: sha512-AaVNVLBl7N9Fun7QDnb00YDubAFjB9ICi5U6kmzcJSnnQTQGRMsuBBRupQV5ERdMMFt71zjSDym7Z+gLVe8m3A==}
 
   '@img/sharp-darwin-arm64@0.33.5':
     resolution: {integrity: sha512-UT4p+iz/2H4twwAoLCqfA9UH5pI6DggwKEGuaPy7nCVQ8ZsiY5PIcrRvD1DzuY3qYL07NtIQcWnBSY/heikIFQ==}
@@ -3140,6 +3183,9 @@ packages:
     resolution: {integrity: sha512-Cs/9xopyzJrpXWbyVUZnr37rprdFJorRgfSp6cdBfvbjxZeKnw2MEu7wJwV/s626i5lZTPGjZPHUF9uQvt51cg==}
     hasBin: true
 
+  exponential-backoff@3.1.1:
+    resolution: {integrity: sha512-dX7e/LHVJ6W3DE1MHWi9S1EYzDESENfLrYohG2G++ovZrYOkm4Knwa0mc1cn84xJOR4KEU0WSchhLbd0UklbHw==}
+
   exponential-backoff@3.1.2:
     resolution: {integrity: sha512-8QxYTVXUkuy7fIIoitQkPwGonB8F3Zj8eEO8Sqg9Zv/bkI7RJAzowee4gr81Hak/dUTpA2Z7VfQgoijjPNlUZA==}
 
@@ -4377,6 +4423,11 @@ packages:
     engines: {node: ^10 || ^12 || ^13.7 || ^14 || >=15.0.1}
     hasBin: true
 
+  nanoid@5.0.9:
+    resolution: {integrity: sha512-Aooyr6MXU6HpvvWXKoVoXwKMs/KyVakWwg7xQfv5/S/RIgJMy0Ifa45H9qqYy7pTCszrHzP21Uk4PZq2HpEM8Q==}
+    engines: {node: ^18 || >=20}
+    hasBin: true
+
   natural-compare@1.4.0:
     resolution: {integrity: sha512-OWND8ei3VtNC9h7V60qff3SVobHr996CTwgxubgyQYEpg290h9J0buyECNNJexkFm5sOajh5G116RYA1c8ZMSw==}
 
@@ -4541,6 +4592,14 @@ packages:
   own-keys@1.0.1:
     resolution: {integrity: sha512-qFOyK5PjiWZd+QQIh+1jhdb9LpxTF0qs7Pm8o5QHYZ0M3vKqSqzsZaEB6oWlxZ+q2sJBMI/Ktgd2N5ZwQoRHfg==}
     engines: {node: '>= 0.4'}
+
+  ox@0.6.7:
+    resolution: {integrity: sha512-17Gk/eFsFRAZ80p5eKqv89a57uXjd3NgIf1CaXojATPBuujVc/fQSVhBeAU9JCRB+k7J50WQAyWTxK19T9GgbA==}
+    peerDependencies:
+      typescript: '>=5.4.0'
+    peerDependenciesMeta:
+      typescript:
+        optional: true
 
   ox@0.6.9:
     resolution: {integrity: sha512-wi5ShvzE4eOcTwQVsIPdFr+8ycyX+5le/96iAJutaZAvCes1J0+RvpEPg5QDPDiaR0XQQAvZVl7AwqQcINuUug==}
@@ -5537,6 +5596,9 @@ packages:
   turbo-stream@2.4.0:
     resolution: {integrity: sha512-FHncC10WpBd2eOmGwpmQsWLDoK4cqsA/UT/GqNoaKOQnT8uzhtCbg3EoUDMvqpOSAI0S26mr0rkjzbOO6S3v1g==}
 
+  tweetnacl@1.0.3:
+    resolution: {integrity: sha512-6rt+RN7aOi1nGMyC4Xa5DdYiukl2UWCbcJft7YhxReBGQD7OAM8Pbxw6YMo4r2diNEA8FEmu32YOn9rhaiE5yw==}
+
   type-detect@4.0.8:
     resolution: {integrity: sha512-0fr/mIH1dlO+x7TlcMy+bIDqKPsw/70tVyeHW787goQjhmqaZe10uwLujubK9q9Lg6Fiho1KUKDYz0Z7k7g5/g==}
     engines: {node: '>=4'}
@@ -5720,6 +5782,14 @@ packages:
   vary@1.1.2:
     resolution: {integrity: sha512-BNGbWLfd0eUPabhkXUVm0j8uuvREyTh5ovRa/dyow/BqAbZJyC+5fU+IzQOzmAKzYqYRAISoRhdQr3eIZ/PXqg==}
     engines: {node: '>= 0.8'}
+
+  viem@2.23.6:
+    resolution: {integrity: sha512-+yUeK8rktbGFQaLIvY4Tki22HUjian9Z4eKGAUT72RF9bcfkYgK8CJZz9P83tgoeLpiTyX3xcBM4xJZrJyKmsA==}
+    peerDependencies:
+      typescript: '>=5.0.4'
+    peerDependenciesMeta:
+      typescript:
+        optional: true
 
   viem@2.24.3:
     resolution: {integrity: sha512-FAoW0hqqpGOlZvfL6GbizDNUd6ZvUyNYYF8HouXbGATrO0RLLh28MOElFNF63hg++uZi2R/EcISs0bvY185z8g==}
@@ -6978,6 +7048,88 @@ snapshots:
       - react
       - react-native
 
+  '@crossmint/client-sdk-base@1.4.16':
+    dependencies:
+      '@crossmint/client-sdk-window': 0.2.3
+      '@crossmint/common-sdk-base': 0.3.4
+      '@datadog/browser-logs': 4.42.2
+      exponential-backoff: 3.1.1
+      uuid: 9.0.1
+      zod: 3.22.4
+    transitivePeerDependencies:
+      - '@datadog/browser-rum'
+
+  '@crossmint/client-sdk-react-base@0.1.1(bufferutil@4.0.9)(react@18.2.0)(typescript@5.8.2)(utf-8-validate@5.0.10)(zod@3.24.2)':
+    dependencies:
+      '@crossmint/client-sdk-base': 1.4.16
+      '@crossmint/common-sdk-base': 0.3.4
+      '@crossmint/wallets-sdk': 0.4.4(bufferutil@4.0.9)(typescript@5.8.2)(utf-8-validate@5.0.10)(zod@3.24.2)
+      react: 18.2.0
+    transitivePeerDependencies:
+      - '@datadog/browser-rum'
+      - bufferutil
+      - encoding
+      - typescript
+      - utf-8-validate
+      - zod
+
+  '@crossmint/client-sdk-react-native-ui@0.1.1(bufferutil@4.0.9)(react-native@0.74.5(@babel/core@7.26.10)(@babel/preset-env@7.26.9(@babel/core@7.26.10))(@types/react@18.2.79)(bufferutil@4.0.9)(react@18.2.0)(utf-8-validate@5.0.10))(react@18.2.0)(typescript@5.8.2)(utf-8-validate@5.0.10)(zod@3.24.2)':
+    dependencies:
+      '@crossmint/client-sdk-base': 1.4.16
+      '@crossmint/client-sdk-react-base': 0.1.1(bufferutil@4.0.9)(react@18.2.0)(typescript@5.8.2)(utf-8-validate@5.0.10)(zod@3.24.2)
+      '@crossmint/common-sdk-base': 0.3.4
+      '@crossmint/wallets-sdk': 0.4.4(bufferutil@4.0.9)(typescript@5.8.2)(utf-8-validate@5.0.10)(zod@3.24.2)
+      react: 18.2.0
+      react-native: 0.74.5(@babel/core@7.26.10)(@babel/preset-env@7.26.9(@babel/core@7.26.10))(@types/react@18.2.79)(bufferutil@4.0.9)(react@18.2.0)(utf-8-validate@5.0.10)
+    transitivePeerDependencies:
+      - '@datadog/browser-rum'
+      - bufferutil
+      - encoding
+      - typescript
+      - utf-8-validate
+      - zod
+
+  '@crossmint/client-sdk-window@0.2.3':
+    dependencies:
+      nanoid: 5.0.9
+      zod: 3.22.4
+
+  '@crossmint/common-sdk-auth@1.0.23':
+    dependencies:
+      '@crossmint/client-sdk-base': 1.4.16
+      '@crossmint/common-sdk-base': 0.3.4
+    transitivePeerDependencies:
+      - '@datadog/browser-rum'
+
+  '@crossmint/common-sdk-base@0.3.4':
+    dependencies:
+      bs58: 5.0.0
+      tweetnacl: 1.0.3
+
+  '@crossmint/wallets-sdk@0.4.4(bufferutil@4.0.9)(typescript@5.8.2)(utf-8-validate@5.0.10)(zod@3.24.2)':
+    dependencies:
+      '@crossmint/common-sdk-auth': 1.0.23
+      '@crossmint/common-sdk-base': 0.3.4
+      '@hey-api/client-fetch': 0.8.1
+      '@solana/web3.js': 1.98.0(bufferutil@4.0.9)(utf-8-validate@5.0.10)
+      bs58: 5.0.0
+      ox: 0.6.9(typescript@5.8.2)(zod@3.24.2)
+      tweetnacl: 1.0.3
+      viem: 2.23.6(bufferutil@4.0.9)(typescript@5.8.2)(utf-8-validate@5.0.10)(zod@3.24.2)
+    transitivePeerDependencies:
+      - '@datadog/browser-rum'
+      - bufferutil
+      - encoding
+      - typescript
+      - utf-8-validate
+      - zod
+
+  '@datadog/browser-core@4.42.2': {}
+
+  '@datadog/browser-logs@4.42.2':
+    dependencies:
+      '@datadog/browser-core': 4.42.2
+
   '@dynamic-labs/assert-package-version@4.10.1':
     dependencies:
       '@dynamic-labs/logger': 4.10.1
@@ -7640,6 +7792,8 @@ snapshots:
   '@hapi/topo@5.1.0':
     dependencies:
       '@hapi/hoek': 9.3.0
+
+  '@hey-api/client-fetch@0.8.1': {}
 
   '@img/sharp-darwin-arm64@0.33.5':
     optionalDependencies:
@@ -10165,6 +10319,8 @@ snapshots:
       - supports-color
       - utf-8-validate
 
+  exponential-backoff@3.1.1: {}
+
   exponential-backoff@3.1.2: {}
 
   eyes@0.1.8: {}
@@ -10790,6 +10946,10 @@ snapshots:
   isomorphic-ws@4.0.1(ws@7.5.10(bufferutil@4.0.9)(utf-8-validate@5.0.10)):
     dependencies:
       ws: 7.5.10(bufferutil@4.0.9)(utf-8-validate@5.0.10)
+
+  isows@1.0.6(ws@8.18.0(bufferutil@4.0.9)(utf-8-validate@5.0.10)):
+    dependencies:
+      ws: 8.18.0(bufferutil@4.0.9)(utf-8-validate@5.0.10)
 
   isows@1.0.6(ws@8.18.1(bufferutil@4.0.9)(utf-8-validate@5.0.10)):
     dependencies:
@@ -11760,6 +11920,8 @@ snapshots:
 
   nanoid@3.3.11: {}
 
+  nanoid@5.0.9: {}
+
   natural-compare@1.4.0: {}
 
   negotiator@0.6.3: {}
@@ -11918,6 +12080,20 @@ snapshots:
       get-intrinsic: 1.3.0
       object-keys: 1.1.1
       safe-push-apply: 1.0.0
+
+  ox@0.6.7(typescript@5.8.2)(zod@3.24.2):
+    dependencies:
+      '@adraffy/ens-normalize': 1.11.0
+      '@noble/curves': 1.8.1
+      '@noble/hashes': 1.7.1
+      '@scure/bip32': 1.6.2
+      '@scure/bip39': 1.5.4
+      abitype: 1.0.8(typescript@5.8.2)(zod@3.24.2)
+      eventemitter3: 5.0.1
+    optionalDependencies:
+      typescript: 5.8.2
+    transitivePeerDependencies:
+      - zod
 
   ox@0.6.9(typescript@5.8.2)(zod@3.24.2):
     dependencies:
@@ -13054,6 +13230,8 @@ snapshots:
 
   turbo-stream@2.4.0: {}
 
+  tweetnacl@1.0.3: {}
+
   type-detect@4.0.8: {}
 
   type-fest@0.16.0: {}
@@ -13225,6 +13403,23 @@ snapshots:
   validate-npm-package-name@5.0.1: {}
 
   vary@1.1.2: {}
+
+  viem@2.23.6(bufferutil@4.0.9)(typescript@5.8.2)(utf-8-validate@5.0.10)(zod@3.24.2):
+    dependencies:
+      '@noble/curves': 1.8.1
+      '@noble/hashes': 1.7.1
+      '@scure/bip32': 1.6.2
+      '@scure/bip39': 1.5.4
+      abitype: 1.0.8(typescript@5.8.2)(zod@3.24.2)
+      isows: 1.0.6(ws@8.18.0(bufferutil@4.0.9)(utf-8-validate@5.0.10))
+      ox: 0.6.7(typescript@5.8.2)(zod@3.24.2)
+      ws: 8.18.0(bufferutil@4.0.9)(utf-8-validate@5.0.10)
+    optionalDependencies:
+      typescript: 5.8.2
+    transitivePeerDependencies:
+      - bufferutil
+      - utf-8-validate
+      - zod
 
   viem@2.24.3(bufferutil@4.0.9)(typescript@5.8.2)(utf-8-validate@5.0.10)(zod@3.24.2):
     dependencies:

@@ -17,6 +17,7 @@
         "preset": "jest-expo"
     },
     "dependencies": {
+        "@crossmint/client-sdk-react-native-ui": "^0.1.1",
         "@dynamic-labs/client": "^4.0.0-alpha.52",
         "@dynamic-labs/react-hooks": "^4.0.0-alpha.52",
         "@dynamic-labs/react-native-extension": "^4.0.0-alpha.52",
