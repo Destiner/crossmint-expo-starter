@@ -1,13 +1,23 @@
 import { Button, SafeAreaView, Text, TextInput, View } from "react-native";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { client } from "./client";
 import { useDynamic } from "./useDynamic";
+import type { SolanaSmartWallet } from "@crossmint/client-sdk-react-native-ui";
+import { useWallet } from "@crossmint/client-sdk-react-native-ui";
+import { useCrossmint } from "@crossmint/client-sdk-react-native-ui";
+import {
+    Connection,
+    PublicKey,
+    TransactionInstruction,
+    TransactionMessage,
+    VersionedTransaction,
+} from "@solana/web3.js";
 
 const EmailSignIn: React.FC = () => {
     const [email, setEmail] = useState("");
     const [otp, setOtp] = useState("");
     const [otpSent, setOtpSent] = useState(false);
-    const { user, setUser } = useDynamic();
+    const { setUser } = useDynamic();
 
     const handleSendOTP = async () => {
         await client.auth.email.sendOTP(email);
@@ -52,24 +62,78 @@ const EmailSignIn: React.FC = () => {
 };
 
 export function Layout() {
+    const { setJwt } = useCrossmint();
+    const { wallet: smartWallet, getOrCreateWallet, error } = useWallet();
     const { authToken, user, activeWallet, solana } = useDynamic();
-
-    const getJwt = () => {
-        console.log(authToken);
-    };
 
     const handleLogout = async () => {
         await client.auth.logout();
     };
 
-    const handleSignMessage = async () => {
+    useEffect(() => {
+        if (authToken) {
+            setJwt(authToken);
+        }
+    }, [authToken]);
+
+    function initSmartWallet() {
         if (!activeWallet) {
             return;
         }
+        const signerAddress = activeWallet.address;
         const signer = solana.getSigner({ wallet: activeWallet });
-        const response = await signer.signMessage(new TextEncoder().encode("Hello, world!"));
-        console.log(response.signature);
-    };
+        getOrCreateWallet({
+            type: "solana-smart-wallet",
+            args: {
+                adminSigner: {
+                    type: "solana-keypair",
+                    address: signerAddress,
+                    signer: {
+                        signMessage: async (message: Uint8Array<ArrayBufferLike>) => {
+                            const response = await signer.signMessage(message);
+                            return response.signature;
+                        },
+                        signTransaction: async (transaction: VersionedTransaction) => {
+                            return await signer.signTransaction(transaction);
+                        },
+                    },
+                },
+            },
+        });
+    }
+
+    async function mint() {
+        if (!smartWallet) {
+            return;
+        }
+        // TODO send a mint transaction
+        const connection = new Connection("https://api.devnet.solana.com");
+        const memoInstruction = new TransactionInstruction({
+            keys: [
+                {
+                    pubkey: new PublicKey(smartWallet.getAddress()),
+                    isSigner: true,
+                    isWritable: true,
+                },
+            ],
+            data: Buffer.from("Hello from Crossmint SDK", "utf-8"),
+            programId: new PublicKey("MemoSq4gqABAXKb96qnH8TysNcWxMyWCqXgDLGmfcHr"),
+        });
+
+        const blockhash = (await connection.getLatestBlockhash()).blockhash;
+        const newMessage = new TransactionMessage({
+            payerKey: new PublicKey(smartWallet.getAddress()),
+            recentBlockhash: blockhash,
+            instructions: [memoInstruction],
+        });
+
+        const transaction = new VersionedTransaction(newMessage.compileToV0Message());
+
+        const txHash = await (smartWallet as SolanaSmartWallet).sendTransaction({
+            transaction,
+        });
+        console.log("txHash", txHash);
+    }
 
     return (
         <React.Fragment>
@@ -87,9 +151,18 @@ export function Layout() {
                         <React.Fragment>
                             <Text>Email: {user?.email}</Text>
                             <Text>Wallet: {activeWallet.address}</Text>
-                            <Button title="Sign Message" onPress={handleSignMessage} />
-                            <Button title="Get JWT" onPress={getJwt} />
-                            <Button onPress={handleLogout} title="Logout" />
+                            <Text>Error: {error}</Text>
+                            <View>
+                                {smartWallet ? (
+                                    <>
+                                        <Text>Smart Wallet: {smartWallet.getAddress()}</Text>
+                                        <Button title="Mint" onPress={mint} />
+                                    </>
+                                ) : (
+                                    <Button title="Init Smart Wallet" onPress={initSmartWallet} />
+                                )}
+                                <Button title="Logout" onPress={handleLogout} />
+                            </View>
                         </React.Fragment>
                     ) : (
                         <EmailSignIn />
