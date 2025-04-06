@@ -36,10 +36,6 @@
             "favicon": "./assets/images/favicon.png"
         },
         "extra": {
-            "crossmintAppId": "com.crossmint.expo-demo",
-            "privyAppId": "cm8vrq5xb00kl7o6ybsxd9axf",
-            "privyClientId": "client-WY5i4tPfBCha8atUNvL62MbwDorfsnfKtjJXbrUGobZvY",
-            "dynamicEnvironmentId": "c8623ad7-3b3f-4ee1-8d4c-63c28a1e5ebd",
             "passkeyAssociatedDomain": "https://<your-associated-domain>"
         },
         "plugins": [
