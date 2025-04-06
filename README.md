@@ -57,3 +57,19 @@ pnpm run ios
 # android
 pnpm run android
 ```
+
+## Troubleshooting
+
+1. Invalid JWT
+
+Most likely, the **JWT authentication** in the Crossmint console is not properly set up. Make sure it matches the provider you're using for auth.
+
+In case that doesn't help, try logging out of your account in the demo app, and logging in again.
+
+2. Unable to make a transaction
+
+Make sure you're using a **staging** Crossmint API key.
+
+3. Missing config
+
+Make sure at least `crossmintAppId` is presented in `app.json`.
