@@ -15,13 +15,11 @@ In the Crossmint console, create a new client-side key. Set "Mobile" as the app 
 2. Configure Privy or Dynamic to use an embedded wallet as a signer.
 
    ```json
-   // ...
     "extra": {
       "privyAppId": "<privy-app-id>",
       "privyClientId": "<privy-client-id>",
       "dynamicEnvironmentId": "<dynamic-environment-id>"
     }
-   // ...
    ```
 
 > [!TIP]
@@ -31,14 +29,12 @@ In the Crossmint console, create a new client-side key. Set "Mobile" as the app 
 3. Configure your application identifier in `app.json`. This should match the bundle identifier for your app in the app store.
 
    ```json
-   // ...
     "ios": {
       "bundleIdentifier": "com.example.myapp"
     },
     "android": {
       "package": "com.example.myapp"
     }
-   // ...
    ```
 
 4. Set up **JWT authentication** in the Crossmint console.
